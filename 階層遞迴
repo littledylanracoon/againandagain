@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+double factor(int);
+
+void main(void){
+
+int n;
+double f;
+
+scanf("%d",&n);
+
+printf("%d!=%g",n,factor(n));
+
+getch();
+
+}
+
+
+double factor(int n)
+{
+    if(n==1)
+        return 1;
+    else
+        return n*factor(n-1);
+
+
+
+}
