@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int d(int,int);
+int m,n;
+void main(void){
+
+scanf("%d %d",&m,&n);
+
+printf("%d",d(m,n));
+
+}
+
+
+
+int d(int m,int n){
+
+
+if(n==0)
+    return 1;
+
+else
+    return m*n+d(m,n-1);
+
+
+
+
+}
