@@ -1,23 +1,29 @@
+#include<iostream>
 #include<stdio.h>
 
 int fib(int);
+int c=0;
 
-void main(void){
+int main(){
 
 int n;
 double f;
 
 scanf("%d",&n);
 
-printf("%F%d is %d",n,fib(n));
-
-getch();
+printf("%d",fib(n));
+if(c==0)
+printf("\n%d",c);
+else
+printf(" %d",c);
+//getch();
 
 }
 
 
 int fib(int n)
 {
+    c++;
     if(n==0)return 0;
     else if(n==1)
         return 1;
