@@ -1,0 +1,24 @@
+
+
+Given a positive integer n, you can apply one of the following operations:
+
+If n is even, replace n with n / 2.
+If n is odd, replace n with either n + 1 or n - 1.
+Return the minimum number of operations needed for n to become 1.
+
+Input: n = 7
+Output: 4
+Explanation: 7 -> 8 -> 4 -> 2 -> 1
+or 7 -> 6 -> 3 -> 2 -> 1
+
+
+int integerReplacement(long int n) 
+    {
+            if(n&(n-1)==0) //2的指數
+                return log2(n);
+            if(n%2==0)
+                return 1+integerReplacement(n/2);
+            else if(n&(n+1)==0) //跟指數差一點點
+                return 1+log2(n+1);
+            else return 1+min(integerReplacement(n-1),integerReplacement(n+1)); //看看-1還是+1快
+    }
